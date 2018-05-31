@@ -2,6 +2,11 @@
 H5和客户端之间使用到的桥接封装
 
 ## Basic Usage
+``` bash
+npm install ls-jsbridge -S
+or
+yarn add ls-jsbridge
+```
 ``` js
 import JSBridge from 'ls-jsbridge';
 ```
