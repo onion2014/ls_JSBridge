@@ -1,0 +1,10 @@
+{
+  "name": "loveshow_JSBridge",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "webpack --config webpack.build.config.js"
+  },
+  "dependencies": {
+    
+  }
+}

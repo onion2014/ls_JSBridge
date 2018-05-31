@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <style>
+    body {
+      font-family: system-ui;
+    }
+  </style>
+</head>
+<body>
+<h2>loveshow_JSBridge@0.0.1</h2>
+
+<div style="position: fixed; background-color: cadetblue; width: 40px; height: 40px; right: 0; top: 0; line-height: 40px; text-align: center; color: #fff;" onclick="(function() {
+  location.reload();
+})()">刷新</div>
+<div id="ready">JSBridge not ready</div>
+
+获取uid
+<button onclick="getUid()">getUid</button>
+<div id="uid">uid: <span></span></div>
+
+获取token
+<button onclick="getToken()">getToken</button>
+<div id="token">token: <span></span></div>
+
+打开微信
+<button onclick="openWeChat()">openWeChat</button>
+<div id="openWeChat">openWeChat: <span></span></div>
+
+关注
+<button onclick="follow(false, 101197)">follow</button>
+<div id="follow">follow: <span></span></div>
+
+取消关注（ios没有效果）
+<button onclick="follow(true, 101197)">unfollow</button>
+<div id="unfollow">unfollow: <span></span></div>
+
+获取公共参数（ios没有效果）（安卓放回空string）
+<button onclick="getParams(true, 101197)">getParams</button>
+<div id="getParams">getParams: <span></span></div>
+
+关闭当前webview（ios没有效果）（安卓返回undefined）
+<button onclick="closeWebPage()">closeWebPage</button>
+<div id="closeWebPage">closeWebPage: <span></span></div>
+
+分享
+<button onclick="share(0)">share to qq</button>
+<button onclick="share(1)">share to 微信</button>
+<button onclick="share(2)">share to 微博</button>
+<button onclick="share(3)">share to QQ空间</button>
+<button onclick="share(4)">share to 朋友圈</button>
+<div id="share">share: <span></span></div>
+
+<!--<script src="../dist/loveshow-JSBridge.js"></script>-->
+<script src="../src/index.js"></script>
+<script>
+  JSBridge.init({
+      debug: false,
+      onready: function () {
+          // JSBridge.getUid({}, function (res) {
+          //     document.querySelector('#client span').innerHTML = res;
+          // })
+          setDom('#ready', 'JSBridge ready');
+      }
+  });
+
+  function setDom(selector, content) {
+      document.querySelector(selector).innerHTML = content;
+  }
+
+  function getUid() {
+      JSBridge.getUid({}, function (res) {
+          console.log('getUidBack');
+          setDom('#uid span', res + '(' + typeof res + ')');
+      });
+  }
+  function getToken() {
+      JSBridge.getToken({}, function (res) {
+          console.log('getTokenBack');
+          setDom('#token span', res + '(' + typeof res + ')');
+      });
+  }
+  function openWeChat() {
+      JSBridge.openWeChat({}, function (res) {
+          console.log('openWeChatBack');
+          setDom('#openWeChat span', res + '(' + typeof res + ')');
+      });
+  }
+  function follow(hasFollow, uid) {
+      JSBridge.follow({hasFollow, uid}, function (res) {
+          console.log('followBack');
+          if (hasFollow) {
+              setDom('#unfollow span', res + '(' + typeof res + ')');
+          } else {
+              setDom('#follow span', res + '(' + typeof res + ')');
+          }
+      });
+  }
+  function getParams() {
+      JSBridge.getParams({}, function (res) {
+          console.log('getParamsBack');
+          setDom('#getParams span', typeof res);
+      });
+  }
+  function closeWebPage() {
+      JSBridge.closeWebPage({}, function (res) {
+          console.log('closeWebPageBack');
+          setDom('#closeWebPage span', typeof res);
+      });
+  }
+  function share(type) {
+      JSBridge.share({
+          shareType: type,
+          title: '快快下载小爱直播，一起领取免费爱钻抢红包，超多美女帅哥一起聊天一起嗨！',
+          content: '要颜值更要有才华，我在小爱直播，快来一起玩吧，还可以获得免费爱钻喔～',
+          imgUrl: 'http://static.live.nagezan.net/live/18c92137-f6dc-40df-85b0-26279b473321.png',
+          url: 'http://baidu.com'
+      }, function (res) {
+          console.log('shareBack');
+          setDom('#share span', typeof res);
+      });
+  }
+</script>
+</body>
+</html>
