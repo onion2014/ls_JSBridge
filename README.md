@@ -25,9 +25,11 @@ JSBridge.init({
 | onready        | init成功后的回调      |   null    |
 
 ## 普通调用
+``` js
 JSBridge.getUid({}, function (res) {
   // 处理res
 });
+```
 
 ## 方法
 | 方法名        | 解释    |  返回值类型  |  备注  |
@@ -35,10 +37,10 @@ JSBridge.getUid({}, function (res) {
 | getUid | 获取当前用户uid | Number | 封装前的类型是不一样的，做了特殊处理，单独使用时需要注意 |
 | getToken | 获取token | String | 原生定义的方法名不一样，安卓叫getUserToken |
 | openWeChat | 打开微信客户端 | undefined | ios无返回值 |
-| follow | 关注/取消关注 | undefined | ios无返回值，接受两个参数 |
+| follow | 关注/取消关注 | undefined | ios无返回值，接受两个参数，[点击查看](#user-content-follow) |
 | getParams | 获取公共参数 | string | ios无返回值，安卓返回空string |
 | closeWebPage | 关闭当前webview | undefined | ios无返回值，都没有效果 |
-| share | 分享 | undefined | ios无返回值，接受参数 |
+| share | 分享 | undefined | ios无返回值，接受参数，[点击查看](#user-content-share) | |
 
 ### follow
 | 参数      | 是否必须  | 解释    |  类型  |  备注  |
