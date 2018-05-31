@@ -2,6 +2,10 @@
 H5和客户端之间使用到的桥接封装
 
 ## Basic Usage
+``` js
+import JSBridge from 'ls-jsbridge';
+```
+或者
 ``` html
 <script src="./dist/JSBridge.js"></script>
 ```

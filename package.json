@@ -1,10 +1,33 @@
 {
-  "name": "loveshow_JSBridge",
-  "version": "0.0.1",
+  "name": "ls-jsbridge",
+  "version": "0.0.3",
+  "description": "ls-jsbridge",
+  "main": "./index.js",
   "scripts": {
     "build": "webpack --config webpack.build.config.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xuejianrong/ls_JSBridge.git"
+  },
+  "keywords": [
+    "JSBridge"
+  ],
+  "author": "Jrrr <xuejianrong@yuntutv.net>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xuejianrong/ls_JSBridge/issues"
+  },
+  "homepage": "https://github.com/xuejianrong/ls_JSBridge#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.0-beta.0",
+    "babel-preset-env": "^1.7.0",
+    "webpack-cli": "^2.1.4"
+  },
   "dependencies": {
-    
+    "@babel/core": "^7.0.0-beta.49",
+    "@babel/preset-env": "^7.0.0-beta.49",
+    "webpack": "^4.10.2"
   }
 }
