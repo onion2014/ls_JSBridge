@@ -30,7 +30,7 @@ JSBridge.init({
 ### init
 | 参数        | 解释    |  默认  |
 | :-----:   | :-----:   | :----: |
-| debug        | 打开时可看到个多调试信息      |   false    |
+| debug        | 打开时可看到更多调试信息      |   false    |
 | onready        | init成功后的回调      |   null    |
 
 ## 普通调用
