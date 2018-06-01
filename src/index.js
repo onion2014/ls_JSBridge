@@ -1,1 +1,3 @@
-window.JSBridge = require('../lib/index.js');
+import JSBridge from '../lib/index.js';
+
+window.JSBridge = JSBridge;
