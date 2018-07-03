@@ -65,3 +65,10 @@ JSBridge.getUid({}, function (res) {
 | content | 是 | 描述 | String | |
 | imgUrl | 是 | 图标 | String | |
 | url | 是 | 分享地址 | String | |
+
+### 关于文件的一些说明
+<code>index.js</code>是作为依赖的入口
+
+<code>src/index.js</code>作为编译成<code>dist</code>文件夹下面文件的入口
+
+<code>lib/index.js</code>是主要的逻辑文件
