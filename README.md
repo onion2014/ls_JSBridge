@@ -47,9 +47,10 @@ JSBridge.getUid({}, function (res) {
 | getToken | 获取token | String | 原生定义的方法名不一样，安卓叫getUserToken |
 | openWeChat | 打开微信客户端 | undefined | ios无返回值 |
 | follow | 关注/取消关注 | undefined | ios无返回值，接受两个参数，[点击查看](#user-content-follow) |
-| getParams | 获取公共参数 | string | ios无返回值，安卓返回空string |
+| getParams | 获取公共参数 | string | <del>ios无返回值</del>，私信发的链接能正常返回，安卓返回空string |
 | closeWebPage | 关闭当前webview | undefined | ios无返回值，都没有效果 |
 | share | 分享 | undefined | ios无返回值，接受参数，[点击查看](#user-content-share) | |
+| hasVip | 是否是特权版本 | string | 值为<code>'{ "has_vip": 1 }'</code> |
 
 ### follow
 | 参数      | 是否必须  | 解释    |  类型  |  备注  |

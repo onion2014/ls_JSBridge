@@ -38,7 +38,7 @@
 <button onclick="follow(true, 101197)">unfollow</button>
 <div id="unfollow">unfollow: <span></span></div>
 
-获取公共参数（ios没有效果）（安卓放回空string）
+获取公共参数（ios没有效果）（安卓返回空string）
 <button onclick="getParams(true, 101197)">getParams</button>
 <div id="getParams">getParams: <span></span></div>
 
@@ -53,6 +53,10 @@
 <button onclick="share(3)">share to QQ空间</button>
 <button onclick="share(4)">share to 朋友圈</button>
 <div id="share">share: <span></span></div>
+
+判断当前是否为有特权
+<button onclick="hasVip()">hasVip</button>
+<div id="hasVip">hasVip: <span></span></div>
 
 <script src="../dist/loveshow-JSBridge.js"></script>
 <!--<script src="../src/index.js"></script>-->
@@ -102,7 +106,7 @@
   function getParams() {
       JSBridge.getParams({}, function (res) {
           console.log('getParamsBack');
-          setDom('#getParams span', typeof res);
+          setDom('#getParams span', res + '(' + typeof res + ')');
       });
   }
   function closeWebPage() {
@@ -122,6 +126,13 @@
           console.log('shareBack');
           setDom('#share span', typeof res);
       });
+  }
+
+  function hasVip() {
+    JSBridge.hasVip({}, function (res) {
+      console.log('hasVip');
+      setDom('#hasVip span', res);
+    });
   }
 </script>
 </body>
